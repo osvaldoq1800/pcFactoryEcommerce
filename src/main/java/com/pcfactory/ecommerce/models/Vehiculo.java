@@ -25,7 +25,6 @@ public class Vehiculo {
     @Column(unique = true, length = 10, nullable = false)
     private String patente;
 
-    // Getters y Setters
     public Long getIdVehiculo() {
         return idVehiculo;
     }
