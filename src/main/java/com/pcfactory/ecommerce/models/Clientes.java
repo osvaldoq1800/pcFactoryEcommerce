@@ -3,11 +3,10 @@ package com.pcfactory.ecommerce.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="clientes")
+@Table(name = "clientes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,21 +16,18 @@ public class Clientes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
-    private Integer rut;
+    @Column(unique = true, nullable = false, length = 12)
+    private String rut;
 
-    @Column(unique = false, nullable = false)
-    private Integer digitoVerificador;
-
-    @Column(unique = false, nullable = false)
+    @Column(nullable = false, length = 50)
     private String nombres;
 
-    @Column(unique = false, nullable = false)
+    @Column(nullable = false, length = 50)
     private String apellidos;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @Column(unique = true, nullable = true)
-    private Integer telefono;
+    @Column(length = 15)
+    private String telefono;
 }

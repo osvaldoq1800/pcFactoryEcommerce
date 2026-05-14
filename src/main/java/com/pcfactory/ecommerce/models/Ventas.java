@@ -5,30 +5,31 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "vehiculos")
+@Table(name = "ventas")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Vehiculo {
+public class Ventas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idVehiculo;
+    private Long id;
 
     @Column(nullable = false)
-    private Long idMarca;
+    private LocalDate fecha;
 
     @Column(nullable = false)
-    private Long idModelo;
+    private Long clienteId;
 
     @Column(nullable = false)
-    private int anio;
+    private double subtotal;
 
-    @Column(length = 20, nullable = false)
-    private String color;
+    @Column(nullable = false)
+    private double iva;
 
-    @Column(unique = true, length = 10, nullable = false)
-    private String patente;
-
+    @Column(nullable = false)
+    private double total;
 }
